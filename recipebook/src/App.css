@@ -1,0 +1,102 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+/* ======== navabar======== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10px;
+  background-color: blueviolet;
+  color: azure;
+  width: 100%;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+}
+
+.navbar-links li {
+  margin: 0 15px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 10px;
+}
+
+.navbar-links a:hover {
+  text-decoration: underline;
+}
+/* ======== sidebar ======= */
+#sidebar {
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 4px;
+  margin-left: 25px;
+}
+#sidebar .sidebar-prop {
+  border-bottom: 1px solid #44ff54;
+  min-height: 45px;
+
+  cursor: pointer;
+  background-color: #4caf50;
+  color: white;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  transition: box-shadow 0.3s ease;
+  box-shadow: 0px 4px 15px rgba(17, 207, 108, 0.3);
+}
+#sidebar .sidebar-prop :hover {
+  background-color: #2b5c2c;
+}
+
+/* ======= footer ======= */
+.footer {
+  font-size: small;
+  justify-content: center;
+  align-items: center;
+}

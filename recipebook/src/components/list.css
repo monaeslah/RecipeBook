@@ -26,3 +26,8 @@
   color: yellow;
   padding: 4px 8px;
 }
+.detail-btn {
+  height: 40px;
+  width: 150px;
+  margin-bottom: auto;
+}

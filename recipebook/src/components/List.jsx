@@ -8,6 +8,9 @@ function List () {
     let updateRecipes = list.filter(recipe => recipe.id !== id)
     setList(updateRecipes)
   }
+  const recipeDetail = recipes => {
+    console.log(recipes)
+  }
   return (
     <div>
       {list.map(recipe => {
@@ -26,6 +29,9 @@ function List () {
               )}
               <button onClick={() => recipeDelete(recipe.id)}>Delete</button>
             </div>
+            <button onClick={() => recipeDetail(recipe)} className='detail-btn'>
+              Go to detail
+            </button>
           </div>
         )
       })}

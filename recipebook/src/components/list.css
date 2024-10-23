@@ -1,0 +1,28 @@
+.card {
+  display: flex;
+
+  border: 1px solid navy;
+  margin-bottom: 3px;
+  padding: 2px;
+}
+.descrition-frame {
+  padding-left: 10px;
+}
+.image-frame {
+  width: 200px;
+}
+.image-frame img {
+  width: 100%;
+}
+.low-calories {
+  border: none;
+  background-color: yellow;
+  color: navy;
+  padding: 4px 8px;
+}
+.high-calories {
+  border: none;
+  background-color: red;
+  color: yellow;
+  padding: 4px 8px;
+}

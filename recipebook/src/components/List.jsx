@@ -1,37 +1,32 @@
 import React, { useState } from 'react'
-
+import ImageRender from './ImageRender'
 import recipes from '../assets/recipes.json'
 import './list.css'
+import DeleteButton from './DeleteButton'
+import CaloriesRender from './CaloriesRender'
+import { Link } from 'react-router-dom'
 function List () {
   const [list, setList] = useState(recipes)
+
   const recipeDelete = id => {
     let updateRecipes = list.filter(recipe => recipe.id !== id)
     setList(updateRecipes)
   }
-  const recipeDetail = recipes => {
-    console.log(recipes)
-  }
+
   return (
     <div>
       {list.map(recipe => {
         return (
-          <div key={recipe.id} className='card'>
-            <div className='image-frame'>
-              <img src={recipe.image} alt='' />
-            </div>
+          <div className='card' key={recipe.id}>
+            <ImageRender image={recipe.image} alt='' />
             <div className='descrition-frame'>
-              <h3>{recipe.name}</h3>
-              <p>{recipe.calories}</p>
-              {recipe.calories < 200 ? (
-                <button className='low-calories'>low</button>
-              ) : (
-                <button className='high-calories'>high</button>
-              )}
-              <button onClick={() => recipeDelete(recipe.id)}>Delete</button>
+              <CaloriesRender calories={recipe.calories} alt='' />
+
+              <DeleteButton calltoBackDelet={() => recipeDelete(recipe.id)} />
             </div>
-            <button onClick={() => recipeDetail(recipe)} className='detail-btn'>
+            <Link to={`./recipe/${recipe.id}`} className='detail-btn'>
               Go to detail
-            </button>
+            </Link>
           </div>
         )
       })}

@@ -1,11 +1,17 @@
 import React from 'react'
 import './sidebar.css'
+import { Link } from 'react-router-dom'
+
 const Sidebar = () => {
   return (
     <div id='sidebar'>
-      <p className='sidebar-prop'>Home</p>
-      <p className='sidebar-prop'>Add new</p>
-      <p className='sidebar-prop'>My Recipe</p>
+      <Link to='/'>
+        {' '}
+        <p className='sidebar-prop'>My Recipes</p>
+      </Link>
+
+      <p className='sidebar-prop'>Add new recipe</p>
+      <p className='sidebar-prop'>About Us</p>
     </div>
   )
 }

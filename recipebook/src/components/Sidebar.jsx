@@ -9,8 +9,9 @@ const Sidebar = () => {
         {' '}
         <p className='sidebar-prop'>My Recipes</p>
       </Link>
-
-      <p className='sidebar-prop'>Add new recipe</p>
+      <Link to='/add-recipe'>
+        <p className='sidebar-prop'>Add new recipe</p>
+      </Link>
       <p className='sidebar-prop'>About Us</p>
     </div>
   )

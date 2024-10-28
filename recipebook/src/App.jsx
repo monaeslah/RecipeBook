@@ -29,6 +29,9 @@ function App () {
     const newItemFood = [newRecipe, ...list]
     setList(newItemFood)
   }
+  const upDateRecipe = updatedFood => {
+    console.log(updatedFood)
+  }
   return (
     <>
       <Navbar />
@@ -36,7 +39,13 @@ function App () {
       <Routes>
         <Route
           path='/'
-          element={<List list={list} recipeDelete={recipeDelete} />}
+          element={
+            <List
+              list={list}
+              recipeDelete={recipeDelete}
+              upDateRecipe={upDateRecipe}
+            />
+          }
         />
         <Route path='/about' element={<About />} />
         <Route path='/recipe/:recipeId' element={<Detail />} />

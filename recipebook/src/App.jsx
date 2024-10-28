@@ -31,6 +31,10 @@ function App () {
   }
   const upDateRecipe = updatedFood => {
     console.log(updatedFood)
+    const upDateList = list.map(item =>
+      item.id === updatedFood.id ? { ...item, ...updatedFood } : item
+    )
+    setList(upDateList)
   }
   return (
     <>

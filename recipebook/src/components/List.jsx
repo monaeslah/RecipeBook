@@ -6,7 +6,7 @@ import DeleteButton from './DeleteButton'
 import CaloriesRender from './CaloriesRender'
 import { Link } from 'react-router-dom'
 function List (props) {
-  const [editingId, setEdingId] = useState(null)
+  const [editingId, setEditingId] = useState(null)
   const [active, setActive] = useState(false)
   const [editedName, setEditedName] = useState('')
   const [editedCalories, setEditedCalories] = useState('')
@@ -15,7 +15,7 @@ function List (props) {
 
   const setEdit = recipe => {
     setActive(true)
-    setEdingId(recipe.id)
+    setEditingId(recipe.id)
     setEditedName(recipe.name)
     setEditedCalories(recipe.calories)
     setEditedServings(recipe.servings)
@@ -24,13 +24,14 @@ function List (props) {
   const sendEdit = () => {
     const editedFood = {
       id: editingId,
-      name: name,
+      name: editedName,
       calories: editedCalories,
       image: editedImage,
       servings: editedServings
     }
     props.upDateRecipe(editedFood)
     setActive(false)
+    setEditingId(null)
   }
   return (
     <div>
@@ -39,6 +40,7 @@ function List (props) {
           <div className='card' key={recipe.id}>
             <ImageRender image={recipe.image} alt='' />
             <div className='descrition-frame'>
+              <h3>{recipe.name}</h3>
               <CaloriesRender calories={recipe.calories} alt='' />
 
               {active && editingId === recipe.id ? (

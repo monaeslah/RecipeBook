@@ -7,11 +7,15 @@ import Sidebar from './components/Sidebar.jsx'
 import List from './components/List.jsx'
 import NotFound from './components/NotFound.jsx'
 import { Routes, Route } from 'react-router-dom'
-import About from './components/AboutPage.jsx'
+import About from './components/pages/AboutPage.jsx'
 import Detail from './components/detail.jsx'
-import AddRecipe from './components/AddRecipe.jsx'
+import AddRecipe from './components/pages/AddRecipe.jsx'
+import './index.css'
+import { Card } from './components/Card.jsx'
 
-function App () {
+
+
+function App() {
   const [list, setList] = useState(recipes)
   const recipeDelete = id => {
     let updateRecipes = list.filter(recipe => recipe.id !== id)
@@ -37,31 +41,34 @@ function App () {
     setList(upDateList)
   }
   return (
-    <>
+    <div className='page-layout'>
       <Navbar />
-      <Sidebar />
-      <Routes>
-        <Route
-          path='/'
-          element={
-            <List
-              list={list}
+      
+      <div className='main-content'>
+        <Sidebar />
+        <Routes>
+          <Route
+            path='/'
+            element={
+            <List 
+            list={list}
               recipeDelete={recipeDelete}
               upDateRecipe={upDateRecipe}
-            />
-          }
-        />
-        <Route path='/about' element={<About />} />
-        <Route path='/recipe/:recipeId' element={<Detail />} />
-        <Route
-          path='/add-recipe'
-          element={<AddRecipe createRecipe={createRecipe} />}
-        />
-        <Route path='*' element={<NotFound />} />
-      </Routes>
+              />}
+          />
+          <Route path='/about' element={<About />} />
+          <Route path='/recipe/:recipeId' element={<Detail />} />
+          <Route
+            path='/add-recipe'
+            element={<AddRecipe createRecipe={createRecipe} />}
+          />
+          <Route path='*' element={<NotFound />} />
+        </Routes>
+      </div>
+      
 
       <Footer />
-    </>
+    </div>
   )
 }
 

@@ -1,19 +1,31 @@
 import React from 'react'
-import './sidebar.css'
-import { Link } from 'react-router-dom'
+import '../App.css'
+import {SidebarData} from './SidebarData'
 
-const Sidebar = () => {
+
+ const Sidebar = () => {
   return (
-    <div id='sidebar'>
-      <Link to='/'>
-        {' '}
-        <p className='sidebar-prop'>My Recipes</p>
-      </Link>
-      <Link to='/add-recipe'>
-        <p className='sidebar-prop'>Add new recipe</p>
-      </Link>
-      <p className='sidebar-prop'>About Us</p>
+    <div className="sidebar">
+      <ul className='sidebar-list'>
+      {SidebarData.map((val, key) => {
+        return ( 
+        <li 
+        key={key}
+        className='row'
+        id={window.location.pathname == val.link ? "active" : ""}
+        onClick={() => {
+          window.location.pathname = val.link;
+        }}
+        >  
+          
+          <div id='icon'>{val.icon}</div> <div id='title'>{val.title}</div>
+        
+        </li>
+        );
+      })}
+      </ul>
     </div>
-  )
-}
+  );
+} 
+
 export default Sidebar

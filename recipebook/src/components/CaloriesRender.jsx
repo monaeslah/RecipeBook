@@ -6,9 +6,11 @@ const CaloriesRender = ({ calories }) => {
     <div>
       <p>{calories}</p>
       {calories < 200 ? (
-        <button className='low-calories'>low</button>
+        <button className='btn-low-calories'>Low Calories</button>
+      ) : calories <= 400 ? (
+        <button className='btn-medium-calories'>Medium Calories</button>
       ) : (
-        <button className='high-calories'>high</button>
+        <button className='btn-high-calories'>High Calories</button>
       )}
     </div>
   )

@@ -14,8 +14,8 @@
 .main-content {
   display: flex;
   flex-grow: 1;
-  /* background-color: rgb(2, 52, 52); */
-  background-image: url("../assets/background.jpg");
+  background-color: rgb(2, 52, 52);
+
   margin: 0;
   padding: 0;
   

@@ -2,7 +2,7 @@ import React from 'react'
 
 function About () {
   return (
-    <div>
+    <div className='main-content'>
       <h1>This is the About Page</h1>
       <h2>About the team members:</h2>
       <p>Here goes a short text presenting us.</p>

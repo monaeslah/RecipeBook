@@ -6,7 +6,7 @@ function Footer () {
       <h3>
         {' '}
         <a href='://github.com/monaeslah/RecipeBook'>
-          click for the repo link
+          Check our repository
         </a>{' '}
       </h3>
     </footer>

@@ -3,8 +3,10 @@ import React from 'react'
 const CaloriesRender = ({ calories }) => {
   console.log(calories)
   return (
-    <div>
-      <p>{calories}</p>
+    <div className='calories'>
+      <p>
+        {calories} <h5>Calories</h5>
+      </p>
       {calories < 200 ? (
         <button className='btn-low-calories'>Low Calories</button>
       ) : calories <= 400 ? (

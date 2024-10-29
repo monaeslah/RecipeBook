@@ -1,38 +1,48 @@
 .main-content {
-    display: flex;
-    flex-grow: 1;
-    /* background-color: rgb(2, 52, 52); */
-    background-image: url("../../assets/background.jpg");
-    margin: 0;
-    padding: 0;
-    
-    
-  }
+  display: flex;
+  flex-grow: 1;
+  /* background-color: rgb(2, 52, 52); */
+  background-image: url('../../assets/background.jpg');
+  margin: 0;
+  padding: 0;
+}
 
-  .about-title{
-    background: white;
-    width: 250px;
-    height: 300px;
-    text-align: center;
+.about-title {
+  background: rgba(255, 255, 255, 0.15);
+  width: 250px;
+  height: 300px;
+  text-align: center;
 }
 
 .info {
-    background-color: aliceblue;
-  }
-  .image-section{
+  background-color: rgba(240, 248, 255, 0.15);
   display: flex;
-
+  flex-direction: column;
+  padding: 8px 16px;
+  text-align: center;
+  margin: 0 auto;
+}
+.info h2 {
+  margin-left: 12px;
+  color: #cba9c3;
+}
+.info p {
+  max-width: 500px;
+  text-indent: 12px;
+  margin-bottom: 20px;
+  color: #bde9ee;
+  font-weight: 400;
+}
+.image-section {
+  display: flex;
+  margin: 0 auto;
 }
 .profile-picture {
-    width: 50px;
-    
-
+  width: 50px;
+  display: flex;
+  flex-direction: column;
 }
 
 .profile-picture img {
-    width: 100%;
-
+  width: 100%;
 }
-
-
-  

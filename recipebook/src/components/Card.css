@@ -42,3 +42,13 @@ card-description {
   width: 100%;
   margin: 0 auto;
 }
+.input-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.edit-submited {
+  background-color: #99bf73;
+  color: rgb(244, 244, 235);
+  font-weight: 800;
+}

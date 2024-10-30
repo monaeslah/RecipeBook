@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import './addRecipe.css'
 
 const AddRecipe = props => {
   const [name, setName] = useState('')
@@ -25,39 +26,34 @@ const AddRecipe = props => {
   return (
     <div className='add-recipe'>
       <form onSubmit={handleSubmit}>
-        <label>
-          Name:
-          <input
-            type='text'
-            name='name'
-            placeholder='food name'
-            value={name}
-            required={true}
-            onChange={e => setName(e.target.value)}
-          />{' '}
-        </label>
-        <label>
-          Calories
-          <input
-            type='number'
-            name='calories'
-            placeholder='food calories '
-            value={calories}
-            required={true}
-            onChange={e => setCalories(e.target.value)}
-          />{' '}
-        </label>
-        <label>
-          Image URL:
-          <input
-            type='text'
-            name='image'
-            placeholder='food image '
-            value={image}
-            required={true}
-            onChange={e => setImage(e.target.value)}
-          />
-        </label>
+        <label>Name:</label>
+        <input
+          type='text'
+          name='name'
+          placeholder='food name'
+          value={name}
+          required={true}
+          onChange={e => setName(e.target.value)}
+        />{' '}
+        <label>Calories </label>
+        <input
+          type='number'
+          name='calories'
+          placeholder='food calories '
+          value={calories}
+          required={true}
+          onChange={e => setCalories(e.target.value)}
+        />{' '}
+        <label>Image URL: </label>
+        <input
+          type='text'
+          name='image'
+          placeholder='food image '
+          value={image}
+          required={true}
+          onChange={e => setImage(e.target.value)}
+        />
+        <label>Food Serving: </label>
         <input
           type='number'
           name='servings'
@@ -66,7 +62,7 @@ const AddRecipe = props => {
           required={true}
           onChange={e => setServings(e.target.value)}
         />
-        <button>Create</button>
+        <input type='button' value='Create' className='create-btn' />
       </form>
     </div>
   )

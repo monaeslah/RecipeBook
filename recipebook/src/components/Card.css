@@ -21,7 +21,10 @@
   width: 100%;
   border-radius: 1rem 1rem 0 0;
 }
-
+.card-title {
+  color: #14260c;
+  text-decoration: none;
+}
 .card-title,
 .card-description {
   margin: 0.5rem 5%;

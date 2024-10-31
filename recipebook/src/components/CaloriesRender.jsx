@@ -1,7 +1,6 @@
 import React from 'react'
 
 const CaloriesRender = ({ calories }) => {
-  console.log(calories)
   return (
     <div className='calories'>
       <p>

@@ -32,7 +32,6 @@ function App () {
     setList(newItemFood)
   }
   const upDateRecipe = updatedFood => {
-    console.log(updatedFood)
     const upDateList = list.map(item =>
       item.id === updatedFood.id ? { ...item, ...updatedFood } : item
     )
@@ -47,13 +46,7 @@ function App () {
         <Routes>
           <Route
             path='/'
-            element={
-              <List
-                list={list}
-                recipeDelete={recipeDelete}
-                upDateRecipe={upDateRecipe}
-              />
-            }
+            element={<List list={list} recipeDelete={recipeDelete} />}
           />
           <Route path='/about' element={<About />} />
           <Route path='/recipe/:recipeId' element={<Detail />} />
@@ -61,7 +54,10 @@ function App () {
             path='/add-recipe'
             element={<AddRecipe createRecipe={createRecipe} />}
           />
-          <Route path='/recipe/edit/:recipeId' element={<EditFood />} />
+          <Route
+            path='/recipe/edit/:recipeId'
+            element={<EditFood upDateRecipe={upDateRecipe} />}
+          />
 
           <Route path='*' element={<NotFound />} />
         </Routes>

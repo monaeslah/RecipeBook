@@ -19,7 +19,9 @@ export const Card = ({
         <div className='image-border'>
           <img src={imgSrc} alt={imgAlt} />
         </div>
-        <h3 className='card-title'>{title}</h3>
+        <Link className='card-title' to={`/recipe/${id}`}>
+          <h3>{title}</h3>
+        </Link>
         <p className='card-description'>{description}</p>
         <div className='btn-controler'>
           <Link to={`/recipe/edit/${id}`}>

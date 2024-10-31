@@ -1,59 +1,56 @@
 import React, { useEffect, useState } from 'react'
 import './addRecipe.css'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import recipes from '../../assets/recipes.json'
-const EditFood = ({
-  placeholder,
-  caloriesPlaceholder,
-  servingsPlaceholder,
-  imagePlaceholder,
-  onNameChange,
-  onCaloriesChange,
-  onServingsChange,
-  onImageChange
-}) => {
+const EditFood = props => {
+  console.log(props)
   const { recipeId } = useParams()
-
+  const navigate = useNavigate()
   const recipeDetail = recipes.find(recipe => recipe.id === recipeId)
 
-  //   const [name, setName] = useState('')
-  //   const [calories, setCalories] = useState('')
-  //   const [image, setImage] = useState('')
-  //   const [servings, setServings] = useState('')
-  useEffect(() => {
-    console.log('you clicked submit')
-  }, [])
+  const [name, setName] = useState(recipeDetail.name)
+  const [calories, setCalories] = useState(recipeDetail.calories)
+  const [image, setImage] = useState(recipeDetail.image)
+  const [servings, setServings] = useState(recipeDetail.servings)
+
   const handleSubmit = e => {
-    console.log('you clicked submit')
+    console.log('hello')
+
     e.preventDefault()
-    // const newFood = {
-    //   name: name,
-    //   calories: calories,
-    //   image: image,
-    //   servings: servings
-    // }
-    // props.createRecipe(newFood)
-    // console.log(newFood)
-    // setName('')
-    // setCalories('')
-    // setImage('')
-    // setServings('')
+    const upDatedFood = {
+      name: name,
+      calories: calories,
+      image: image,
+      servings: servings
+    }
+    props.upDateRecipe(upDatedFood)
+    console.log(upDatedFood)
+    setName('')
+    setCalories('')
+    setImage('')
+    setServings('')
+    navigate('/')
   }
   return (
     <div className='add-recipe'>
       <form onSubmit={handleSubmit}>
         <label>Name:</label>
-        <input name='name' placeholder={placeholder} onChange={onNameChange} />
+        <input
+          name='name'
+          placeholder={name}
+          onChange={e => setName(e.target.value)}
+          value={name}
+        />
         <label>Calories </label>
         <input
           type='number'
           name='calories'
           placeholder='food calories '
-          value={'calories'}
+          value={calories}
           required={true}
-          //   onChange={e => setCalories(e.target.value)}
+          onChange={e => setCalories(e.target.value)}
         />{' '}
-        {/* <label>Image URL: </label>
+        <label>Image URL: </label>
         <input
           type='text'
           name='image'
@@ -70,8 +67,8 @@ const EditFood = ({
           value={servings}
           required={true}
           onChange={e => setServings(e.target.value)}
-        /> */}
-        <input type='button' value='Create' className='create-btn' />
+        />{' '}
+        <input type='submit' value='Create' className='create-btn' />
       </form>
     </div>
   )

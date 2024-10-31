@@ -6,7 +6,7 @@ const ItemDetails = props => {
   const { recipeId } = useParams()
 
   const recipeDetail = recipes.find(recipe => recipe.id === recipeId)
-  console.log(recipeDetail)
+
   return (
     <div className='details'>
       <div className='input-wrap'>

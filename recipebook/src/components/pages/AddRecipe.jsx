@@ -1,14 +1,13 @@
 import React, { useState } from 'react'
 import './addRecipe.css'
-
+import { useNavigate } from 'react-router-dom'
 const AddRecipe = props => {
   const [name, setName] = useState('')
   const [calories, setCalories] = useState('')
   const [image, setImage] = useState('')
   const [servings, setServings] = useState('')
-
+  const navigate = useNavigate()
   const handleSubmit = e => {
-    console.log('you clicked submit')
     e.preventDefault()
     const newFood = {
       name: name,
@@ -22,12 +21,14 @@ const AddRecipe = props => {
     setCalories('')
     setImage('')
     setServings('')
+    navigate('/')
   }
   return (
     <div className='add-recipe'>
       <form onSubmit={handleSubmit}>
         <label>Name:</label>
-        <input className='recipetwo'
+        <input
+          className='recipetwo'
           type='text'
           name='name'
           placeholder='food name'
@@ -62,7 +63,7 @@ const AddRecipe = props => {
           required={true}
           onChange={e => setServings(e.target.value)}
         />
-        <input type='button' value='Create' className='create-btn' />
+        <input type='submit' value='Create' className='create-btn' />
       </form>
     </div>
   )

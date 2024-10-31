@@ -3,8 +3,8 @@
   margin-left: 40px;
   height: 100%;
   border-radius: 5px;
-  margin: 20px auto;
-  width: 564px;
+  margin: 150px auto;
+  width: 874px;
   padding: 50px;
 }
 .add-recipe form {
@@ -22,6 +22,11 @@ label {
   font-weight: 800;
   font-size: 14px;
 }
+
+.addrecipe recipetwo{
+  font-color: white;
+}
+
 input {
   background-color: #f3f5f7;
   height: 40px;

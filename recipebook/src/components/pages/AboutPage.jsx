@@ -11,7 +11,7 @@ function About () {
   return (
     <div className='main-content'>
       <div className='info'>
-        <h2>About the team members</h2>
+        <h2>ABOUT THE TEAM MEMBERS</h2>
 
         <p>
           Meet three dedicated web development students from a Bootcamp, each

@@ -1,13 +1,16 @@
 import React, { useState } from 'react'
 import '../App.css'
 import { Link, NavLink } from 'react-router-dom'
+import rblogo from '../assets/rblogo.png'
 
 const Navbar = () => {
-  const [menuOpen, setMenuOpen] = useState(false);   
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  return ( 
+  return (
     <nav>
-      <Link to="/" className='title'>Recipes Book</Link>
+        <Link to='/' className='logo'>
+            <img src={rblogo} alt="Logo" className='logo-image' />
+        </Link>
       <div className='menu' onClick={() => (
         setMenuOpen(!menuOpen)
       )} >
@@ -16,7 +19,7 @@ const Navbar = () => {
         <span></span>
       </div>
       <ul className={menuOpen ? "open" : ""}>
-       
+
         <li>
           <NavLink to="/" >My Recipes</NavLink>
           </li>

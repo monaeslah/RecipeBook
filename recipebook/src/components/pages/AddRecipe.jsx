@@ -27,7 +27,7 @@ const AddRecipe = props => {
     <div className='add-recipe'>
       <form onSubmit={handleSubmit}>
         <label>Name:</label>
-        <input
+        <input className='recipetwo'
           type='text'
           name='name'
           placeholder='food name'

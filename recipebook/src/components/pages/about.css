@@ -15,22 +15,23 @@
 }
 
 .info {
-  background-color: rgba(240, 248, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.4);
   display: flex;
   flex-direction: column;
   padding: 8px 16px;
   text-align: center;
-  margin: 0 auto;
+  margin: 50px auto;
 }
 .info h2 {
+  margin: 30px;
   margin-left: 12px;
-  color: #cba9c3;
+  color: #030c23;
 }
 .info p {
   max-width: 500px;
   text-indent: 12px;
   margin-bottom: 20px;
-  color: #bde9ee;
+  color: #ffffff;
   font-weight: 400;
 }
 .image-section {
@@ -38,11 +39,13 @@
   margin: 0 auto;
 }
 .profile-picture {
-  width: 50px;
+  width: 170px;
   display: flex;
   flex-direction: column;
 }
 
 .profile-picture img {
+  margin: px;
+  align-self: center;
   width: 100%;
 }

@@ -1,27 +1,43 @@
 import React from 'react'
 import { Link, useParams } from 'react-router-dom'
 import recipes from '../assets/recipes.json'
+import './list.css'
 const ItemDetails = props => {
   const { recipeId } = useParams()
-  console.log('recipeId', props)
-  const recipeDetail = recipes.find(recipe => recipe.id === recipeId)
 
+  const recipeDetail = recipes.find(recipe => recipe.id === recipeId)
+  console.log(recipeDetail)
   return (
-    <div>
-      <div className='card'>
+    <div className='details'>
+      <div className='input-wrap'>
         <div className='image-frame'>
-          <img src={recipeDetail.image} alt='' />
+          <img src={recipeDetail.image} alt={recipeDetail.name} />
         </div>
-        <div className='descrition-frame'>
-          <h3>{recipeDetail.name}</h3>
-          <p>{recipeDetail.calories}</p>
-          {recipeDetail.calories < 200 ? (
-            <button className='low-calories'>low</button>
-          ) : (
-            <button className='high-calories'>high</button>
-          )}
+
+        <div className='details-description'>
+          <p>
+            Food Name
+            <br />
+            {recipeDetail.name}
+          </p>
+
+          <p>
+            Food Calories <br />
+            {recipeDetail.calories}
+          </p>
+
+          <p>
+            Serving <br />
+            {recipeDetail.servings}
+          </p>
         </div>
-        <Link to='/'>Back</Link>
+
+        {/* <input
+            type='button'
+            value='Submit'
+            onClick={onEdit}
+            className='edit-submited'
+          /> */}
       </div>
     </div>
   )

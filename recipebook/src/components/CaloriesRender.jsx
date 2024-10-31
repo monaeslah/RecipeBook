@@ -5,7 +5,7 @@ const CaloriesRender = ({ calories }) => {
   return (
     <div className='calories'>
       <p>
-        {calories} <h5>Calories</h5>
+        {calories} <p>Calories</p>
       </p>
       {calories < 200 ? (
         <button className='btn-low-calories'>Low Calories</button>

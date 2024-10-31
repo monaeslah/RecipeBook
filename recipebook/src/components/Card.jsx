@@ -1,6 +1,7 @@
 import './Card.css'
 import DeleteIcon from '@mui/icons-material/Delete'
 import EditNoteIcon from '@mui/icons-material/EditNote'
+import { Link } from 'react-router-dom'
 export const Card = ({
   imgSrc,
   imgAlt = 'card image',
@@ -9,15 +10,8 @@ export const Card = ({
   buttonText = 'See more details',
   onDelete,
   onEdit,
-  editMode = false,
-  placeholder,
-  caloriesPlaceholder,
-  servingsPlaceholder,
-  imagePlaceholder,
-  onNameChange,
-  onCaloriesChange,
-  onServingsChange,
-  onImageChange
+
+  id
 }) => {
   return (
     <div className='card-area'>
@@ -25,43 +19,12 @@ export const Card = ({
         <div className='image-border'>
           <img src={imgSrc} alt={imgAlt} />
         </div>
-        <h1 className='card-title'>{title}</h1>
+        <h3 className='card-title'>{title}</h3>
         <p className='card-description'>{description}</p>
         <div className='btn-controler'>
-          {editMode ? (
-            <>
-              <div className='input-wrap'>
-                <input
-                  name='name'
-                  placeholder={placeholder}
-                  onChange={onNameChange}
-                />
-                <input
-                  name='calories'
-                  placeholder={caloriesPlaceholder}
-                  onChange={onCaloriesChange}
-                />
-                <input
-                  name='servings'
-                  placeholder={servingsPlaceholder}
-                  onChange={onServingsChange}
-                />
-                <input
-                  name='image'
-                  placeholder={imagePlaceholder}
-                  onChange={onImageChange}
-                />
-                <input
-                  type='button'
-                  value='Submit'
-                  onClick={onEdit}
-                  className='edit-submited'
-                />
-              </div>
-            </>
-          ) : (
+          <Link to={`/recipe/edit/${id}`}>
             <EditNoteIcon onClick={onEdit} />
-          )}
+          </Link>
 
           <DeleteIcon onClick={onDelete} />
         </div>

@@ -14,7 +14,7 @@
   background-color: white;
   min-height: 250px;
 }
-.card-box h1 {
+.card-box h3 {
   text-align: center;
 }
 .card-img {
@@ -23,7 +23,7 @@
 }
 
 .card-title,
-card-description {
+.card-description {
   margin: 0.5rem 5%;
 }
 

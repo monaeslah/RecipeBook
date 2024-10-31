@@ -11,11 +11,9 @@ import About from './components/pages/AboutPage.jsx'
 import Detail from './components/detail.jsx'
 import AddRecipe from './components/pages/AddRecipe.jsx'
 import './index.css'
-import { Card } from './components/Card.jsx'
 
-
-
-function App() {
+import EditFood from './components/pages/editFood.jsx'
+function App () {
   const [list, setList] = useState(recipes)
   const recipeDelete = id => {
     let updateRecipes = list.filter(recipe => recipe.id !== id)
@@ -43,18 +41,19 @@ function App() {
   return (
     <div className='page-layout'>
       <Navbar />
-      
+
       <div className='main-content'>
         <Sidebar />
         <Routes>
           <Route
             path='/'
             element={
-            <List 
-            list={list}
-              recipeDelete={recipeDelete}
-              upDateRecipe={upDateRecipe}
-              />}
+              <List
+                list={list}
+                recipeDelete={recipeDelete}
+                upDateRecipe={upDateRecipe}
+              />
+            }
           />
           <Route path='/about' element={<About />} />
           <Route path='/recipe/:recipeId' element={<Detail />} />
@@ -62,10 +61,11 @@ function App() {
             path='/add-recipe'
             element={<AddRecipe createRecipe={createRecipe} />}
           />
+          <Route path='/recipe/edit/:recipeId' element={<EditFood />} />
+
           <Route path='*' element={<NotFound />} />
         </Routes>
       </div>
-      
 
       <Footer />
     </div>

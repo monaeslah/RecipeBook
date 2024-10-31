@@ -1,3 +1,9 @@
+.details {
+  margin: 20px auto;
+  background: rgba(255, 255, 255, 0.1);
+  max-height: 500px;
+  border-radius: 3px;
+}
 .card {
   background-color: #f9f9f9;
   border: 1px solid #ccc;
@@ -22,13 +28,24 @@
 .descrition-frame {
   padding-left: 10px;
 }
-
+.details-description {
+  min-width: 300px;
+  margin: 0 auto;
+  text-align: center;
+  color: #d6d6e4;
+  font-size: 20px;
+  font-weight: bold;
+}
 .image-frame {
-  width: 200px;
+  width: 500px;
+
+  display: flex;
+  justify-content: center;
 }
 
 .image-frame img {
   width: 100%;
+  margin: 0 auto;
 }
 
 .low-calories {

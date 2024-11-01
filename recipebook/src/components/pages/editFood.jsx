@@ -68,7 +68,7 @@ const EditFood = props => {
           required={true}
           onChange={e => setServings(e.target.value)}
         />{' '}
-        <input type='submit' value='Create' className='create-btn' />
+        <input type='submit' value='Update Food' className='create-btn' />
       </form>
     </div>
   )

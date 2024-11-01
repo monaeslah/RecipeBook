@@ -13,6 +13,19 @@
   margin: 1px;
   background-color: white;
   min-height: 250px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+
+  background-color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.card-box:hover {
+  transform: scale(1.05);
+
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
 }
 .card-box h3 {
   text-align: center;
@@ -42,13 +55,22 @@
   display: flex;
 }
 .image-border img {
-  width: 100%;
+  width: 90%;
   margin: 0 auto;
 }
 .input-wrap {
   display: flex;
   flex-direction: column;
   gap: 4px;
+}
+.input-wrap a {
+  width: 30px;
+  margin-left: auto;
+  margin-right: 2px;
+  /* background-color: rgba(255, 255, 255, 0.2); */
+}
+a img {
+  width: 100%;
 }
 .edit-submited {
   background-color: #99bf73;

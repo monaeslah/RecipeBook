@@ -2,6 +2,7 @@ import React from 'react'
 import { Link, useParams } from 'react-router-dom'
 import recipes from '../assets/recipes.json'
 import './list.css'
+import EditNoteIcon from '@mui/icons-material/EditNote'
 const ItemDetails = props => {
   const { recipeId } = useParams()
 
@@ -10,6 +11,9 @@ const ItemDetails = props => {
   return (
     <div className='details'>
       <div className='input-wrap'>
+        <Link to={`/recipe/edit/${recipeId}`}>
+          <EditNoteIcon color='success' />
+        </Link>
         <div className='image-frame'>
           <img src={recipeDetail.image} alt={recipeDetail.name} />
         </div>

@@ -2,17 +2,7 @@ import './Card.css'
 import DeleteIcon from '@mui/icons-material/Delete'
 import EditNoteIcon from '@mui/icons-material/EditNote'
 import { Link } from 'react-router-dom'
-export const Card = ({
-  imgSrc,
-  imgAlt = 'card image',
-  title = 'Card Title',
-  description = 'This is the card description',
-  buttonText = 'See more details',
-  onDelete,
-  onEdit,
-
-  id
-}) => {
+export const Card = ({ imgSrc, imgAlt, title, description, onDelete, id }) => {
   return (
     <div className='card-area'>
       <div className='card-box'>
@@ -25,7 +15,7 @@ export const Card = ({
         <p className='card-description'>{description}</p>
         <div className='btn-controler'>
           <Link to={`/recipe/edit/${id}`}>
-            <EditNoteIcon onClick={onEdit} />
+            <EditNoteIcon />
           </Link>
 
           <DeleteIcon onClick={onDelete} />

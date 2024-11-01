@@ -20,7 +20,6 @@ function App () {
     setList(updateRecipes)
   }
   const createRecipe = newFood => {
-    console.log(newFood)
     const recipeId = list.map(item => item.id)
     const maxId = Math.max(...recipeId)
     const newId = maxId + 1

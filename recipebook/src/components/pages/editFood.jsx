@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import { useState } from 'react'
 import './addRecipe.css'
 import { useParams, useNavigate } from 'react-router-dom'
 import recipes from '../../assets/recipes.json'
 const EditFood = props => {
-  console.log(props)
   const { recipeId } = useParams()
   const navigate = useNavigate()
   const recipeDetail = recipes.find(recipe => recipe.id === recipeId)
@@ -14,8 +13,6 @@ const EditFood = props => {
   const [servings, setServings] = useState(recipeDetail.servings)
 
   const handleSubmit = e => {
-    console.log('hello')
-
     e.preventDefault()
     const upDatedFood = {
       name: name,
@@ -24,7 +21,7 @@ const EditFood = props => {
       servings: servings
     }
     props.upDateRecipe(upDatedFood)
-    console.log(upDatedFood)
+
     setName('')
     setCalories('')
     setImage('')

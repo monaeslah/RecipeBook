@@ -16,7 +16,7 @@ const AddRecipe = props => {
       servings: servings
     }
     props.createRecipe(newFood)
-    console.log(newFood)
+
     setName('')
     setCalories('')
     setImage('')

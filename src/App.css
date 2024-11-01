@@ -159,10 +159,11 @@ nav .menu span {
 
 .sidebar {
   min-height: 100vh;
-  width: 20%;
+  max-width: 250px;
   background-color: rgba(3, 83, 243, 0.13);
   margin: 0;
   padding: 0;
+  width: 100%;
 }
 
 .sidebar-list {

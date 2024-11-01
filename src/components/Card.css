@@ -48,6 +48,11 @@
   flex-wrap: wrap;
   width: 80%;
   background-image: url('../assets/background.jpg');
+
+  gap: 20px;
+  justify-content: space-between;
+  margin-left: 75px;
+  margin-top: 50px;
 }
 .image-border {
   height: 180px;
